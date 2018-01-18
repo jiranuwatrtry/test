@@ -5,7 +5,7 @@
 
 //รับตัวแปรจาก $_POST["name"] มาเก็บไว้ใน $Language
 //$Language = $_POST["language"];
-/$Language = 'TH';	
+$Language = 'TH';	
 echo 'Language : '.$Language.'<br>';
 
 // ที่อยู่ของเอกสาร WSDL ของเว็บเซอร์วิส ปตท");
