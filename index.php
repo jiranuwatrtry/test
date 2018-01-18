@@ -48,6 +48,27 @@ $objectResult = $client->__soapCall($methodName, array('parameters' => $params),
                }
 
 ?>
+ 
+ <?
+// Convert Variable Array To Variable
+ 
+while(list($xVarName, $xVarvalue) = each($_GET)) {
+     ${$xVarName} = $xVarvalue;
+}
+ 
+ 
+while(list($xVarName, $xVarvalue) = each($_POST)) {
+     ${$xVarName} = $xVarvalue;
+}
+ 
+while(list($xVarName, $xVarvalue) = each($_FILES)) {
+     ${$xVarName."_name"} = $xVarvalue['name'];
+     ${$xVarName."_type"} = $xVarvalue['type'];
+     ${$xVarName."_size"} = $xVarvalue['size'];
+     ${$xVarName."_error"} = $xVarvalue['error'];
+     ${$xVarName} = $xVarvalue['tmp_name'];
+}
+?>
 </body>
 </html>
 
