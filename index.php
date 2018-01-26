@@ -74,7 +74,7 @@ if (!is_null($events['events'])) {
 						
 							$messages = [
 								'type' => 'text',
-								'text' => $text1." : https://www.toteservice.com/MainEs/"
+								'text' => "จ้า"." : https://www.toteservice.com/MainEs/"
 								];
 						}}}
 			}else{
