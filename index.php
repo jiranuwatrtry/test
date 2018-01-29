@@ -27,9 +27,9 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 
 
- if($arrJson['events'][0]['message']['text'] == "สอบถาม"){
+ if($arrJson['events'][1]['message']['text'] == "สอบถาม"){
   $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['replyToken'] = $arrJson['events'][1]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "หน่วงานราชการหรือโรงแรม";
 $ch = curl_init();
