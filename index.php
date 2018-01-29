@@ -16,6 +16,48 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,$strUrl);
+curl_setopt($ch, CURLOPT_HEADER, false);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrPostData));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+$result = curl_exec($ch);
+curl_close ($ch);
+ 
+if($arrJson['events'][0]['message']['text'] == "สอบถาม"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "หน่วยงานราชการหรือโรงแรม";
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,$strUrl);
+curl_setopt($ch, CURLOPT_HEADER, false);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrPostData));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+$result = curl_exec($ch);
+curl_close ($ch);
+if($arrJson['events'][0]['message']['text'] == "หน่วยงานราชการ"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "หน่วยงานราชการโอเคครับผม";
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,$strUrl);
+curl_setopt($ch, CURLOPT_HEADER, false);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrPostData));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+$result = curl_exec($ch);
+curl_close ($ch);
+
 }else if($arrJson['events'][0]['message']['text'] == "ชื่ออะไร"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -34,15 +76,5 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 }
  
  
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL,$strUrl);
-curl_setopt($ch, CURLOPT_HEADER, false);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrPostData));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-$result = curl_exec($ch);
-curl_close ($ch);
- 
+
 ?>
