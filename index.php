@@ -40,21 +40,12 @@ if (!is_null($events['events'])) {
 				
 			
 			}else if($text == 'โทรศัพท์'){
-				if (!is_null($events['events'])) {
-					// Loop through each event
-					//foreach ($events['events'] as $event) {
-						// Reply only when message sent is in 'text' format
-						if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-							// Get text sent
-							$text1 = $event['message']['text'];
-						
+								
 							$messages = [
 								'type' => 'text',
 								'text' => $text1." : https://www.toteservice.com/MainEs/"
 								];
-						}
-					//}
-					}
+					
 
 			
 			}else{
