@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 				 $ch = curl_init(); 
 
         // set url สำหรับดึงข้อมูล 
-        curl_setopt($ch, CURLOPT_URL, "http://kingssk.zhotspot.com:800/ptt/index.php"); 
+        curl_setopt($ch, CURLOPT_URL, "http://www.csit.itsisaket.com/ptt.php"); 
 
         //return the transfer as a string 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
