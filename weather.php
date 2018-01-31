@@ -6,7 +6,7 @@
  
    
 //$province = $_POST["province"];
-$province = "เชียงใหม่";
+//$province = "เชียงใหม่";
        $ch = curl_init(); 
 
         //set url สำหรับดึงข้อมูล 
@@ -30,7 +30,7 @@ $province = "เชียงใหม่";
        foreach ($obj as $key => $value) { 
               if($key == 'Stations'){  
                foreach ($value as $k => $v) {  
-                       if( $v->Province == $province) {    
+                       //if( $v->Province == $province) {    
                 foreach ($v as $ky => $vy) { 
                    
 
@@ -58,7 +58,7 @@ $province = "เชียงใหม่";
                             if($kyab == 'Value'){echo "ค่าเฉลี่ยปริมาณน้ำฝน : ".$vyab."  %"."\n"."\n";} }}
                         }}            
                 } 
-            }    
+            //}    
                     
                     }
                 }
