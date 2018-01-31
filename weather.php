@@ -52,7 +52,7 @@ $province = $_GET["province"];
                             if($kyab == 'Value'){echo "อุณหภูมสุงสุดใน24ชม.ที่ผ่านมา : ".$vyab."  Cํ"."\n";} }} 
             
                         if($kya == 'MinTemperature') {foreach ($vya as $kyab => $vyab) { 
-                            if($kyab == 'Value'){echo "อุณหภูมต่ำสุดใน24ชม.ที่ผ่านมา  : ".$vyab."  Cํ"."\n"';} }}
+                            if($kyab == 'Value'){echo "อุณหภูมต่ำสุดใน24ชม.ที่ผ่านมา  : ".$vyab."  Cํ"."\n";} }}
                         
                         if($kya == 'RelativeHumidity') {foreach ($vya as $kyab => $vyab) { 
                             if($kyab == 'Value'){echo "ค่าเฉลี่ยความชื้นสัมพัทธ์ : ".$vyab."  %"."\n";} }} 
