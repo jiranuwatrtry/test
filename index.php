@@ -48,16 +48,14 @@ if (!is_null($events['events'])) {
 					
 
 			
-			}else if (strpos($province, 'อากาศ') !== false) {
-				$x_tra = str_replace("อากาศ","", $province);
-				$pieces = explode(" ", $x_tra);
-				$_question = str_replace("|","",$pieces[0]);
+			}else if (strpos($text, 'อากาศ') !== false) {
+				
 				$url = 'https://boiling-lake-75961.herokuapp.com/weather.php';
 			
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $_question);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $text);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
