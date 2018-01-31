@@ -49,7 +49,10 @@ if (!is_null($events['events'])) {
 
 			
 			}else if (strpos($text, 'อากาศ') !== false){
-				
+				$x_tra = str_replace("อากาศ","", $province);
+      				$pieces = explode(" ", $x_tra);
+      				$_question = str_replace("/","",$pieces[0]);
+      
 // 			$url = 'https://boiling-lake-75961.herokuapp.com/weather.php';
 			
 			
@@ -79,7 +82,7 @@ if (!is_null($events['events'])) {
 		            
 				$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => $_question
 				];
 			}else{
 			// Build message to reply back
