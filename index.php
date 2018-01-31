@@ -49,7 +49,7 @@ if (!is_null($events['events'])) {
 
 			
 			}else if (strpos($text, 'อากาศ') !== false){
-				$x_tra = str_replace("อากาศ","", $province);
+				$x_tra = str_replace("อากาศ","", $text);
       				$pieces = explode(" ", $x_tra);
       				$_question = str_replace("/","",$pieces[0]);
       
