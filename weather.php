@@ -30,7 +30,7 @@
        foreach ($obj as $key => $value) { 
               if($key == 'Stations'){  
                foreach ($value as $k => $v) {  
-                       //if( $v->Province == $province) {    
+                         
                 foreach ($v as $ky => $vy) { 
                    
 
@@ -58,7 +58,7 @@
                             if($kyab == 'Value'){echo "ค่าเฉลี่ยปริมาณน้ำฝน : ".$vyab."  %"."\n"."\n";} }}
                         }}            
                 } 
-            //}    
+        
                     
                     }
                 }
