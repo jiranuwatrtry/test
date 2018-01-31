@@ -5,14 +5,14 @@
       
  
    
-$province = $_POST["text"];
-if (strpos($province, 'อากาศ') !== false) {
-      $x_tra = str_replace("อากาศ","", $province);
-      $pieces = explode(" ", $x_tra);
-      $_question = str_replace("/","",$pieces[0]);
+$province = $_POST["province"];
+// if (strpos($province, 'อากาศ') !== false) {
+//       $x_tra = str_replace("อากาศ","", $province);
+//       $pieces = explode(" ", $x_tra);
+//       $_question = str_replace("/","",$pieces[0]);
       
     
-    }
+//     }
        $ch = curl_init(); 
 
         //set url สำหรับดึงข้อมูล 
@@ -36,7 +36,7 @@ if (strpos($province, 'อากาศ') !== false) {
        foreach ($obj as $key => $value) { 
               if($key == 'Stations'){  
                foreach ($value as $k => $v) {  
-                       if( $v->Province == $_question) {    
+                       if( $v->Province == $province) {    
                 foreach ($v as $ky => $vy) { 
                    
 
