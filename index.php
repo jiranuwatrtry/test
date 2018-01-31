@@ -48,16 +48,29 @@ if (!is_null($events['events'])) {
 					
 
 			
-			}else if (strpos($text, 'อากาศ') !== false) {
-				if (strpos($text, 'อากาศ') !== false) {
-      $x_tra = str_replace("อากาศ","", $text);
-      $pieces = explode(" ", $x_tra);
-      $_question = str_replace("|","",$pieces[0]);
-      $messages = [
+			}else if($text == 'อากาศ'){
+			$ch = curl_init(); 
+
+        // set url สำหรับดึงข้อมูล 
+        curl_setopt($ch, CURLOPT_URL, "https://boiling-lake-75961.herokuapp.com/weather.php?province=อากาศ|เชียงใหม่"); 
+
+        //return the transfer as a string 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+
+        // ตัวแปร $output เก็บข้อมูลทั้งหมดที่ดึงมา 
+        $output = curl_exec($ch); 
+        
+     
+   
+
+        // ปิดการเชื่อต่อ
+        curl_close($ch);    
+		            
+				$messages = [
 				'type' => 'text',
-				'text' => $_question." : รับทราบครับ"
-    
-    }}else{
+				'text' => $output
+				];
+			}else{
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
