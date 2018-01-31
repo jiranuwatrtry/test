@@ -5,7 +5,7 @@
       
  
    
-$province = $_POST["province"];
+$province = $_GET["province"];
 // if (strpos($province, 'อากาศ') !== false) {
 //       $x_tra = str_replace("อากาศ","", $province);
 //       $pieces = explode(" ", $x_tra);
