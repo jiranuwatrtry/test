@@ -52,13 +52,15 @@ if (!is_null($events['events'])) {
       $x_tra = str_replace("อากาศ","", $text);
       $pieces = explode(" ", $x_tra);
       $_question = str_replace("|","",$pieces[0]);
-      
+      $messages = [
+				'type' => 'text',
+				'text' => $_question." : รับทราบครับ"
     
     }else{
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $_question." : รับทราบครับ"
+				'text' => $text." : รับทราบครับ"
 				
 			];
 			}
