@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<form action="output.php" method="post">
+<form action="weather.php" method="post">
 Language: <input type="text" name="province"><br>
 <input type="submit">
 </form>
