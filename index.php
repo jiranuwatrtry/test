@@ -48,11 +48,17 @@ if (!is_null($events['events'])) {
 					
 
 			
-			}else {
+			}else if (strpos($text, 'อากาศ') !== false) {
+      $x_tra = str_replace("อากาศ","", $text);
+      $pieces = explode(" ", $x_tra);
+      $_question = str_replace("|","",$pieces[0]);
+      
+    
+    }else{
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text." : รับทราบครับ"
+				'text' => $_question." : รับทราบครับ"
 				
 			];
 			}
