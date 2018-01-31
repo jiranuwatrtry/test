@@ -54,22 +54,22 @@ if (!is_null($events['events'])) {
       				$_question = str_replace("/","",$pieces[0]);
       		
 				
-// 				$ch = curl_init(); 
+				$ch = curl_init(); 
 
-//         // set url สำหรับดึงข้อมูล 
-//         curl_setopt($ch, CURLOPT_URL, "https://boiling-lake-75961.herokuapp.com/weather.php?"); 
+        // set url สำหรับดึงข้อมูล 
+        curl_setopt($ch, CURLOPT_URL, "https://boiling-lake-75961.herokuapp.com/weather.php?province=$_question"); 
 
-//         //return the transfer as a string 
-//         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+        //return the transfer as a string 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
 
-//         // ตัวแปร $output เก็บข้อมูลทั้งหมดที่ดึงมา 
-//         $output = curl_exec($ch); 
-//              // ปิดการเชื่อต่อ
-//         curl_close($ch);    
+        // ตัวแปร $output เก็บข้อมูลทั้งหมดที่ดึงมา 
+        $output = curl_exec($ch); 
+             // ปิดการเชื่อต่อ
+        curl_close($ch);    
 		            
 				$messages = [
 				'type' => 'text',
-				'text' => $_question
+				'text' => $output
 				];
 			}else{
 			// Build message to reply back
