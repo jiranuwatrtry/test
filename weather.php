@@ -6,7 +6,7 @@
  
    
 //$province = $_POST["province"];
-$province = "เชียงใหม่"
+$province = "เชียงใหม่";
        $ch = curl_init(); 
 
         //set url สำหรับดึงข้อมูล 
