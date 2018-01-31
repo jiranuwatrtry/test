@@ -52,7 +52,7 @@ if (!is_null($events['events'])) {
 			$ch = curl_init(); 
 
         // set url สำหรับดึงข้อมูล 
-        curl_setopt($ch, CURLOPT_URL, "https://boiling-lake-75961.herokuapp.com/weather.php?province=อากาศ|เชียงใหม่"); 
+        curl_setopt($ch, CURLOPT_URL, "https://boiling-lake-75961.herokuapp.com/weather.php"); 
 
         //return the transfer as a string 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
