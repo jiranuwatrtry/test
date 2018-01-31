@@ -50,18 +50,18 @@ if (!is_null($events['events'])) {
 			
 			}else if (strpos($text, 'อากาศ') !== false){
 				
-			$url = 'https://boiling-lake-75961.herokuapp.com/weather.php';
+// 			$url = 'https://boiling-lake-75961.herokuapp.com/weather.php';
 			
 			
 			
-			$ch = curl_init($url);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $text);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			$result = curl_exec($ch);
-			curl_close($ch);
-			echo $result . "\r\n";
+// 			$ch = curl_init($url);
+// 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+// 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// 			curl_setopt($ch, CURLOPT_POSTFIELDS, $text);
+// 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+// 			$result = curl_exec($ch);
+// 			curl_close($ch);
+// 			echo $result . "\r\n";
 				
 				
 // 				$ch = curl_init(); 
@@ -79,7 +79,7 @@ if (!is_null($events['events'])) {
 		            
 				$messages = [
 				'type' => 'text',
-				'text' => $result
+				'text' => $text
 				];
 			}else{
 			// Build message to reply back
