@@ -48,39 +48,6 @@ if (!is_null($events['events'])) {
 					
 
 			
-			}else if (strpos($text, 'อากาศ') !== false) {
-				
-				$messages = [
-				'type' => 'text',
-				'text' => $text." : รับทราบครับ"
-// 				$url = 'https://boiling-lake-75961.herokuapp.com/weather.php';
-			
-// 			$ch = curl_init($url);
-// 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-// 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-// 			curl_setopt($ch, CURLOPT_POSTFIELDS, $text);
-// 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-// 			$result = curl_exec($ch);
-// 			curl_close($ch);
-			  
-// 			$ch = curl_init(); 
-// 			// set url สำหรับดึงข้อมูล 
-// 			curl_setopt($ch, CURLOPT_URL, "https://boiling-lake-75961.herokuapp.com/weather.php"); 
-// 			//return the transfer as a string 
-// 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-// 			// ตัวแปร $output เก็บข้อมูลทั้งหมดที่ดึงมา 
-// 			$output = curl_exec($ch); 
-			
-		 
-	   
-// 			// ปิดการเชื่อต่อ
-// 			curl_close($ch);    
-						
-// 					$messages = [
-// 					'type' => 'text',
-// 					'text' => $output
-// 					];
-			
 			}else {
 			// Build message to reply back
 			$messages = [
