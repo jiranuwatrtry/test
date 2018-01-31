@@ -6,6 +6,13 @@
  
    
 $province = $_POST["province"];
+if (strpos($province, 'อากาศ') !== false) {
+      $x_tra = str_replace("อากาศ","", $province);
+      $pieces = explode(" ", $x_tra);
+      $_question = str_replace("|","",$pieces[0]);
+      
+    
+    }
        $ch = curl_init(); 
 
         //set url สำหรับดึงข้อมูล 
@@ -29,7 +36,7 @@ $province = $_POST["province"];
        foreach ($obj as $key => $value) { 
               if($key == 'Stations'){  
                foreach ($value as $k => $v) {  
-                       if( $v->Province == $province) {    
+                       if( $v->Province == $_question) {    
                 foreach ($v as $ky => $vy) { 
                    
 
