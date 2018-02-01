@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
 				
 			
 			}else (strpos($text, 'โทรศัพท์') !== false){
-				$x_tra = str_replace("อากาศ","", $text);
+				$x_tra = str_replace("โทรศัพท์","", $text);
       				$pieces = explode(" ", $x_tra);
       				$_question = str_replace(" ","",$pieces[0]);
       		
