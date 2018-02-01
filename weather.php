@@ -35,33 +35,33 @@ $province = $_GET["province"];
 
        foreach ($obj as $key => $value) { 
               if($key == 'Stations'){  
-               foreach ($value as $k => $v) {  
-                       if( $v->Province == $province) {    
-                foreach ($v as $ky => $vy) { 
+               foreach ($value as $Stations_key => $Stations_value) {  
+                       if($Stations_value->Province == $province) {    
+                foreach ($Stations_value as $Stations_key_key => $Stations_value_value) { 
                    
 
-                    if($ky == 'Province'){echo "จังหวัด : ".$vy."\n"; } 
-                    if($ky == 'StationNameTh'){echo "สถานีตรวจวัด : ".$vy."\n"; }                         
-                    if($ky == 'Observe') {foreach ($vy as $kya => $vya) { 
+                    if($Stations_key_key == 'Province'){echo "จังหวัด : ".$Stations_value_value."\n"; } 
+                    if($Stations_key_key == 'StationNameTh'){echo "สถานีตรวจวัด : ".$Stations_value_value."\n"; }                         
+                    if($Stations_key_key == 'Observe') {foreach ($Stations_value_value as $Observe_key => $Observe_value) { 
                         
-                        if($kya == 'Time') {  echo "วันที่ตรวจวัด  :  ".$vya."\n"; }
-                        if($kya == 'Temperature') {foreach ($vya as $kyab => $vyab) { 
-                            if($kyab == 'Value'){echo "อุณหภูมอากาศปัจจุบัน : ".$vyab."  Cํ"."\n";} }} 
+                        if($Observe_key == 'Time') {  echo "วันที่ตรวจวัด  :  ".$Observe_value."\n"; }
+                        if($Observe_key == 'Temperature') {foreach ($Observe_value as $Temperature_key => $Temperature_value) { 
+                            if($Temperature_key == 'Value'){echo "อุณหภูมอากาศปัจจุบัน : ".$Temperature_value."  Cํ"."\n";} }} 
                         
-                        if($kya == 'MaxTemperature') {foreach ($vya as $kyab => $vyab) { 
-                            if($kyab == 'Value'){echo "อุณหภูมสุงสุดใน24ชม.ที่ผ่านมา : ".$vyab."  Cํ"."\n";} }} 
+                        if($Observe_key == 'MaxTemperature') {foreach ($Observe_value as $Temperature_key => $Temperature_value) { 
+                            if($Temperature_key == 'Value'){echo "อุณหภูมสุงสุดใน24ชม.ที่ผ่านมา : ".$Temperature_value."  Cํ"."\n";} }} 
             
-                        if($kya == 'MinTemperature') {foreach ($vya as $kyab => $vyab) { 
-                            if($kyab == 'Value'){echo "อุณหภูมต่ำสุดใน24ชม.ที่ผ่านมา  : ".$vyab."  Cํ"."\n";} }}
+                        if($Observe_key == 'MinTemperature') {foreach ($Observe_value as $Temperature_key => $Temperature_value) { 
+                            if($Temperature_key == 'Value'){echo "อุณหภูมต่ำสุดใน24ชม.ที่ผ่านมา  : ".$Temperature_value."  Cํ"."\n";} }}
                         
-                        if($kya == 'RelativeHumidity') {foreach ($vya as $kyab => $vyab) { 
-                            if($kyab == 'Value'){echo "ค่าเฉลี่ยความชื้นสัมพัทธ์ : ".$vyab."  %"."\n";} }} 
+                        if($Observe_key == 'RelativeHumidity') {foreach ($Observe_value as $Temperature_key => $Temperature_value) { 
+                            if($Temperature_key == 'Value'){echo "ค่าเฉลี่ยความชื้นสัมพัทธ์ : ".$Temperature_value."  %"."\n";} }} 
                            
-                        if($kya == 'WindSpeed') {foreach ($vya as $kyab => $vyab) { 
-                            if($kyab == 'Value'){echo "ค่าเฉลี่ยความเร็วลม : ".$vyab."  km/h"."\n";} }}    
+                        if($Observe_key == 'WindSpeed') {foreach ($Observe_value as $Temperature_key => $Temperature_value) { 
+                            if($Temperature_key == 'Value'){echo "ค่าเฉลี่ยความเร็วลม : ".$Temperature_value."  km/h"."\n";} }}    
                         
-                        if($kya == 'Rainfall') {foreach ($vya as $kyab => $vyab) { 
-                            if($kyab == 'Value'){echo "ค่าเฉลี่ยปริมาณน้ำฝน : ".$vyab."  %"."\n"."\n";} }}
+                        if($Observe_key == 'Rainfall') {foreach ($Observe_value as $Temperature_key => $Temperature_value) { 
+                            if($Temperature_key == 'Value'){echo "ค่าเฉลี่ยปริมาณน้ำฝน : ".$Temperature_value."  %"."\n"."\n";} }}
                         }}            
                 } 
             }    
