@@ -19,19 +19,13 @@ if (!is_null($events['events'])) {
 
         // set url สำหรับดึงข้อมูล 
         curl_setopt($ch, CURLOPT_URL, "http://www.csit.itsisaket.com/ptt.php"); 
-
         //return the transfer as a string 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-
         // ตัวแปร $output เก็บข้อมูลทั้งหมดที่ดึงมา 
         $output = curl_exec($ch); 
-        
-     
-   
-
-        // ปิดการเชื่อต่อ
-        curl_close($ch);    
-		            
+            // ปิดการเชื่อต่อ
+        curl_close($ch);   
+         
 				$messages = [
 				'type' => 'text',
 				'text' => $output
@@ -39,11 +33,15 @@ if (!is_null($events['events'])) {
 	
 				
 			
-			}else if($text == 'โทรศัพท์'){
+			}else (strpos($text, 'โทรศัพท์') !== false){
+				$x_tra = str_replace("อากาศ","", $text);
+      				$pieces = explode(" ", $x_tra);
+      				$_question = str_replace(" ","",$pieces[0]);
+      		
 								
 							$messages = [
 								'type' => 'text',
-								'text' => $text1." : https://www.toteservice.com/MainEs/"
+								'text' => $_question
 								];
 					
 
