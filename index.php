@@ -49,7 +49,7 @@ if (!is_null($events['events'])) {
 			}else if(strpos($text, 'แม็ก') !== false){
 				
       					$a=array("เป็นความจริงเลยเดียว","โกหกทั้งเพ","มันไม่ใช่ความจริง","แล้วไงล่ะ","หรอ");
-					$random_keys=array_rand($a,1);
+					$random_keys=array_rand($a,2);
 					 
 								
 							$messages = [
@@ -62,7 +62,7 @@ if (!is_null($events['events'])) {
 			}else if(strpos($text, 'พง') !== false){
 				
       		$a=array("เป็นความจริงเลยเดียว","โกหกทั้งเพ","มันไม่ใช่ความจริง","แล้วไงล่ะ","หรอ");
-					$random_keys=array_rand($a,1);
+					$random_keys=array_rand($a,2);
 					 
 								
 							$messages = [
@@ -76,7 +76,7 @@ if (!is_null($events['events'])) {
 				
       		
 						$a=array("เป็นความจริงเลยเดียว","โกหกทั้งเพ","มันไม่ใช่ความจริง","แล้วไงล่ะ","หรอ");
-					$random_keys=array_rand($a,1);
+					$random_keys=array_rand($a,2);
 					 
 								
 							$messages = [
@@ -89,7 +89,7 @@ if (!is_null($events['events'])) {
 			}else if(strpos($text, 'ตี้') !== false){
 				
       		$a=array("เป็นความจริงเลยเดียว","โกหกทั้งเพ","มันไม่ใช่ความจริง","แล้วไงล่ะ","หรอ");
-					$random_keys=array_rand($a,1);
+					$random_keys=array_rand($a,2);
 					 
 								
 							$messages = [
