@@ -46,6 +46,39 @@ if (!is_null($events['events'])) {
 					
 
 			
+			}else if(strpos($text, 'แม็ก') !== false){
+				
+      		
+								
+							$messages = [
+								'type' => 'text',
+								'text' => $text." : ไม่ใช่ความจริงเลยครับ"
+								];
+					
+
+			
+			}else if(strpos($text, 'พง') !== false){
+				
+      		
+								
+							$messages = [
+								'type' => 'text',
+								'text' => $text." : เป็นความจริงเลยเดียว"
+								];
+					
+
+			
+			}else if(strpos($text, 'สนธยา') !== false){
+				
+      		
+								
+							$messages = [
+								'type' => 'text',
+								'text' => $text." : โกหกทั้งเพ"
+								];
+					
+
+			
 			}else if (strpos($text, 'อากาศ') !== false){
 				$x_tra = str_replace("อากาศ","", $text);
       				$pieces = explode(" ", $x_tra);
