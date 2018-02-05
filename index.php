@@ -82,14 +82,15 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => $output
 				];
-			}else{
-			// Build message to reply back
-			$messages = [
-				'type' => 'text',
-				'text' => $text." : รับทราบครับ"
-				
-			];
 			}
+// 			else{
+// 			// Build message to reply back
+// 			$messages = [
+// 				'type' => 'text',
+// 				'text' => $text." : รับทราบครับ"
+				
+// 			];
+// 			}
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
