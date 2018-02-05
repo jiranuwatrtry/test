@@ -70,6 +70,19 @@ if (!is_null($events['events'])) {
 								];
 					
 			
+			}else if(strpos($text, 'ผลบอล') !== false){
+				$x_tra = str_replace("ผลบอล","", $text);
+      				$pieces = explode("|", $x_tra);
+    				$p1=str_replace("[","",$pieces[0]);
+    				$p2=str_replace("]","",$pieces[1]);
+					 
+								$h= rand($p1,$p2);
+							$messages = [
+								'type' => 'text',
+								'text' => "ผมคิดว่าทีม ".$h." ชนะครับ"
+								];
+					
+			
 			}else if (strpos($text, 'อากาศ') !== false){
 				$x_tra = str_replace("อากาศ","", $text);
       				$pieces = explode(" ", $x_tra);
