@@ -74,7 +74,7 @@ if (!is_null($events['events'])) {
 				$x_tra = str_replace("ผลบอล","", $text);
       				$pieces = explode("|", $x_tra);
 				
-					 $random_keys=array_rand($pieces,1);
+					 $random_keys=array_rand($pieces,3);
 				
 							$messages = [
 								'type' => 'text',
