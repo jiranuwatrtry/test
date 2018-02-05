@@ -60,13 +60,16 @@ if (!is_null($events['events'])) {
 
 			
 			}else if(strpos($text, 'หวย') !== false ){
-				
-      					$h= rand(10,99);
+					$h1= rand(0,9);
+					$h2= rand(1,9);
+					$h3= rand(0,9);
+					$h4= rand(0,9);
+      					$h5= rand(1,9);
 					 
 								
 							$messages = [
 								'type' => 'text',
-								'text' => "หวยงวดหน้า คือ : ".$h
+								'text' => "หวยงวดหน้า สามตัวมี : ".$h1.$h2.$h3."  และสองมี : ".$h4.$h5 ." แน่นอนครับ"
 								];
 					
 			
