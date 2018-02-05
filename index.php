@@ -78,7 +78,7 @@ if (!is_null($events['events'])) {
 				
 							$messages = [
 								'type' => 'text',
-								'text' => "ผมคิดว่าทีม ".$pieces[$random_keys[0]]." ชนะครับ"
+								'text' => "ผมคิดว่าทีม ".$random_keys." ชนะครับ"
 								];
 					
 			
