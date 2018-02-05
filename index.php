@@ -73,12 +73,13 @@ if (!is_null($events['events'])) {
 			}else if(strpos($text, 'ผลบอล') !== false){
 				$x_tra = str_replace("ผลบอล","", $text);
       				$pieces = explode("|", $x_tra);
-				
+				$a=array("เสมอกันกับ","แพ้","ชนะ");
+					$random_keys=array_rand($a,2);
 					
-				$h= rand(0,1);
+				
 							$messages = [
 								'type' => 'text',
-								'text' => "ผมคิดว่าทีม ".$pieces[$h]." ชนะครับ"
+								'text' => "ผมคิดว่าทีม ".$pieces[0]." ".$a[$random_keys[0]]." ทีม ".$pieces[1]" ครับ"
 								];
 					
 			
