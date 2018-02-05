@@ -79,6 +79,16 @@ if (!is_null($events['events'])) {
 					
 
 			
+			}else if(strpos($text, 'ตี้') !== false){
+				
+      		
+								
+							$messages = [
+								'type' => 'text',
+								'text' => $text." : แล้วทำไมล่ะ"
+								];
+					
+			
 			}else if (strpos($text, 'อากาศ') !== false){
 				$x_tra = str_replace("อากาศ","", $text);
       				$pieces = explode(" ", $x_tra);
