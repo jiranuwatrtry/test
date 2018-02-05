@@ -74,11 +74,11 @@ if (!is_null($events['events'])) {
 				$x_tra = str_replace("ผลบอล","", $text);
       				$pieces = explode("|", $x_tra);
 				
-					 $random_keys=array_rand($pieces,2);
+					
 				$h= rand(1,2);
 							$messages = [
 								'type' => 'text',
-								'text' => "ผมคิดว่าทีม ".$random_keys[$h]." ชนะครับ"
+								'text' => "ผมคิดว่าทีม ".$pieces[$h]." ชนะครับ"
 								];
 					
 			
