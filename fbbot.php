@@ -1,78 +1,84 @@
 <?php
-
 $access_token = "EAACeO8sH1wwBAOqdR1h9GKt2HqHRKHcJP4RNvo18IfdlVNYyzObmIt4XGtN5gTOnrTBdyy6uktnsu93wUdTVAHQZBltZCVSnq4Vze5X06bpuRPGD2wqZB6jHto5QUkuOXzRuEsmX4PourZCkeSkFVmwMIPtbjYpAAyZCAXlsAgvqshxZBR16jG";
 $verify_token = "ty_RTY";
-
-$content = file_get_contents('php://input');
-// Parse JSON
-$events = json_decode($content, true);
-// Validate parsed JSON data
-if (!is_null($events['events'])) {
-	// Loop through each event
-	foreach ($events['events'] as $event) {
-		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			// Get text sent
-			$text = $event['message']['text'];
-					// Get replyToken
-			$replyToken = $event['replyToken'];
-
-			if($text == 'น้ำมัน'){
-				 $ch = curl_init(); 
-        // set url สำหรับดึงข้อมูล 
-        curl_setopt($ch, CURLOPT_URL, "http://www.csit.itsisaket.com/ptt.php"); 
-        //return the transfer as a string 
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-        // ตัวแปร $output เก็บข้อมูลทั้งหมดที่ดึงมา 
-        $output = curl_exec($ch); 
-        
-     
-   
-        // ปิดการเชื่อต่อ
-        curl_close($ch);    
-		            
-				$messages = [
-				'type' => 'text',
-				'text' => $output
-				];
-	
-				
-			
-			}else if($text == 'โทรศัพท์'){
-								
-							$messages = [
-								'type' => 'text',
-								'text' => $text1." : https://www.toteservice.com/MainEs/"
-								];
-					
-			
-			}else{
-			// Build message to reply back
-			$messages = [
-				'type' => 'text',
-				'text' => $text." : รับทราบครับ"
-				
-			];
-			}
-			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$access_token;
-			$data = [
-				'replyToken' => $replyToken,
-				'messages' => [$messages],
-			];
-			$post = json_encode($data);
-			$ch = curl_init($url);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			$result = curl_exec($ch);
-			curl_close($ch);
-			echo $result . "\r\n";
-			
-			
-		}
-	}
+$hub_verify_token = null;
+if(isset($_REQUEST['hub_challenge'])) {
+ $challenge = $_REQUEST['hub_challenge'];
+ $hub_verify_token = $_REQUEST['hub_verify_token'];
 }
-echo "OK";
-		
+if ($hub_verify_token === $verify_token) {
+ echo $challenge;
+}
+$input = json_decode(file_get_contents('php://input'), true);
+$sender = $input['entry'][0]['messaging'][0]['sender']['id'];
+$message = $input['entry'][0]['messaging'][0]['message']['text'];
+$message_to_reply = '';
+/**
+ * Some Basic rules to validate incoming messages
+ */
+ 
+$api_key="<mLAP API KEY>";
+$url = 'https://api.mlab.com/api/1/databases/duckduck/collections/linebot?apiKey='.$api_key.'';
+$json = file_get_contents('https://api.mlab.com/api/1/databases/duckduck/collections/linebot?apiKey='.$api_key.'&q={"question":"'.$message.'"}');
+$data = json_decode($json);
+$isData=sizeof($data);
+if (strpos($message, 'สอนเป็ด') !== false) {
+  if (strpos($message, 'สอนเป็ด') !== false) {
+    $x_tra = str_replace("สอนเป็ด","", $message);
+    $pieces = explode("|", $x_tra);
+    $_question=str_replace("[","",$pieces[0]);
+    $_answer=str_replace("]","",$pieces[1]);
+    //Post New Data
+    $newData = json_encode(
+      array(
+        'question' => $_question,
+        'answer'=> $_answer
+      )
+    );
+    $opts = array(
+      'http' => array(
+          'method' => "POST",
+          'header' => "Content-type: application/json",
+          'content' => $newData
+       )
+    );
+    $context = stream_context_create($opts);
+    $returnValue = file_get_contents($url,false,$context);
+    $message_to_reply = 'ขอบคุณที่สอนเป็ด';
+  }
+}else{
+  if($isData >0){
+   foreach($data as $rec){
+     $message_to_reply = $rec->answer;
+   }
+  }else{
+    $message_to_reply = 'ก๊าบบ คุณสามารถสอนให้ฉลาดได้เพียงพิมพ์: สอนเป็ด[คำถาม|คำตอบ]';
+  }
+}
+//API Url
+$url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$access_token;
+//Initiate cURL.
+$ch = curl_init($url);
+//The JSON data.
+$jsonData = '{
+    "recipient":{
+        "id":"'.$sender.'"
+    },
+    "message":{
+        "text":"'.$message_to_reply.'"
+    }
+}';
+//Encode the array into JSON.
+$jsonDataEncoded = $jsonData;
+//Tell cURL that we want to send a POST request.
+curl_setopt($ch, CURLOPT_POST, 1);
+//Attach our encoded JSON string to the POST fields.
+curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
+//Set the content type to application/json
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+//curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
+//Execute the request
+if(!empty($input['entry'][0]['messaging'][0]['message'])){
+    $result = curl_exec($ch);
+}
+?>
