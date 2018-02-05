@@ -73,7 +73,7 @@ if (!is_null($events['events'])) {
 			}else if(strpos($text, 'ผลบอล') !== false){
 				$x_tra = str_replace("ผลบอล","", $text);
       				$pieces = explode("|", $x_tra);
-				$a=array("เสมอกันกับ","แพ้","ชนะ");
+				$a=array("เสมอกับ","แพ้","ชนะ");
 					$random_keys=array_rand($a,2);
 					
 				
