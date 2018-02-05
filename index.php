@@ -48,22 +48,26 @@ if (!is_null($events['events'])) {
 			
 			}else if(strpos($text, 'แม็ก') !== false){
 				
-      		
+      					$a=array("เป็นความจริงเลยเดียว","โกหกทั้งเพ","มันไม่ใช่ความจริง","แล้วไงล่ะ","หรอ");
+					$random_keys=array_rand($a,1);
+					 
 								
 							$messages = [
 								'type' => 'text',
-								'text' => $text." : ไม่ใช่ความจริงเลยครับ"
+								'text' => $text." : "$a[$random_keys[0]]
 								];
 					
 
 			
 			}else if(strpos($text, 'พง') !== false){
 				
-      		
+      		$a=array("เป็นความจริงเลยเดียว","โกหกทั้งเพ","มันไม่ใช่ความจริง","แล้วไงล่ะ","หรอ");
+					$random_keys=array_rand($a,1);
+					 
 								
 							$messages = [
 								'type' => 'text',
-								'text' => $text." : เป็นความจริงเลยเดียว"
+								'text' => $text." : "$a[$random_keys[0]]
 								];
 					
 
@@ -71,23 +75,27 @@ if (!is_null($events['events'])) {
 			}else if(strpos($text, 'สน') !== false){
 				
       		
+						$a=array("เป็นความจริงเลยเดียว","โกหกทั้งเพ","มันไม่ใช่ความจริง","แล้วไงล่ะ","หรอ");
+					$random_keys=array_rand($a,1);
+					 
 								
 							$messages = [
 								'type' => 'text',
-								'text' => $text." : โกหกทั้งเพ"
+								'text' => $text." : "$a[$random_keys[0]]
 								];
 					
 
 			
 			}else if(strpos($text, 'ตี้') !== false){
 				
-      		
+      		$a=array("เป็นความจริงเลยเดียว","โกหกทั้งเพ","มันไม่ใช่ความจริง","แล้วไงล่ะ","หรอ");
+					$random_keys=array_rand($a,1);
+					 
 								
 							$messages = [
 								'type' => 'text',
-								'text' => $text." : แล้วทำไมล่ะ"
+								'text' => $text." : "$a[$random_keys[0]]
 								];
-					
 			
 			}else if (strpos($text, 'อากาศ') !== false){
 				$x_tra = str_replace("อากาศ","", $text);
