@@ -54,7 +54,7 @@ if (!is_null($events['events'])) {
 								
 							$messages = [
 								'type' => 'text',
-								'text' => $text." : "$a[$random_keys[0]]
+								'text' => $text." : ".$a[$random_keys[0]]
 								];
 					
 
@@ -67,7 +67,7 @@ if (!is_null($events['events'])) {
 								
 							$messages = [
 								'type' => 'text',
-								'text' => $text." : "$a[$random_keys[0]]
+								'text' => $text." : ".$a[$random_keys[0]]
 								];
 					
 
@@ -81,7 +81,7 @@ if (!is_null($events['events'])) {
 								
 							$messages = [
 								'type' => 'text',
-								'text' => $text." : "$a[$random_keys[0]]
+								'text' => $text." : ".$a[$random_keys[0]]
 								];
 					
 
@@ -94,7 +94,7 @@ if (!is_null($events['events'])) {
 								
 							$messages = [
 								'type' => 'text',
-								'text' => $text." : "$a[$random_keys[0]]
+								'text' => $text." : ".$a[$random_keys[0]]
 								];
 			
 			}else if (strpos($text, 'อากาศ') !== false){
