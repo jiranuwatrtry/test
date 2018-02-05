@@ -68,7 +68,7 @@ if (!is_null($events['events'])) {
 					
 
 			
-			}else if(strpos($text, 'สนธยา') !== false){
+			}else if(strpos($text, 'สน') !== false){
 				
       		
 								
