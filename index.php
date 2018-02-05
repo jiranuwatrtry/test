@@ -36,12 +36,12 @@ if (!is_null($events['events'])) {
 			}else if(strpos($text, 'โทรศัพท์') !== false){
 				$x_tra = str_replace("โทรศัพท์","", $text);
       				$pieces = explode(" ", $x_tra);
-      				$_question = str_replace("","",$pieces[0]);
+      				$tel = str_replace("","",$pieces[0]);
       		
 								
 							$messages = [
 								'type' => 'text',
-								'text' => $_question
+								'text' => $tel
 								];
 					
 
