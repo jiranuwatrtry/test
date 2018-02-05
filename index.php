@@ -75,7 +75,7 @@ if (!is_null($events['events'])) {
       				$pieces = explode("|", $x_tra);
 				
 					
-				$h= rand(1,2);
+				$h= rand(0,1);
 							$messages = [
 								'type' => 'text',
 								'text' => "ผมคิดว่าทีม ".$pieces[$h]." ชนะครับ"
