@@ -59,6 +59,17 @@ if (!is_null($events['events'])) {
 					
 
 			
+			}else if(strpos($text, 'หวย') !== false ){
+				
+      					$h= rand(10,99);
+					 
+								
+							$messages = [
+								'type' => 'text',
+								'text' => "หวยงวดหน้า คือ : ".$h
+								];
+					
+			
 			}else if (strpos($text, 'อากาศ') !== false){
 				$x_tra = str_replace("อากาศ","", $text);
       				$pieces = explode(" ", $x_tra);
