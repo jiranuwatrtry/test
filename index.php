@@ -14,7 +14,7 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 					// Get replyToken
 			$replyToken = $event['replyToken'];
-			if($text == 'น้ำมัน'){
+			if(strpos($text, 'น้ำมัน') !== false){
 				 $ch = curl_init(); 
 
         // set url สำหรับดึงข้อมูล 
