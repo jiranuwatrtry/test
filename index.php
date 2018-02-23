@@ -37,11 +37,22 @@ if (!is_null($events['events'])) {
 				$x_tra = str_replace("โทรศัพท์","", $text);
       				$pieces = explode(" ", $x_tra);
       				$tel = str_replace("","",$pieces[0]);
-      		
-								
+      					http://93.190.51.85:8080/ChatBOTData/BalanceFromTelno?telno=
+			$ch = curl_init(); 
+
+        		// set url สำหรับดึงข้อมูล 
+        		curl_setopt($ch, CURLOPT_URL, "http://93.190.51.85:8080/ChatBOTData/BalanceFromTelno?telno=$_question"); 
+
+        		//return the transfer as a string 
+        		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+
+        		// ตัวแปร $output เก็บข้อมูลทั้งหมดที่ดึงมา 
+        		$output = curl_exec($ch); 
+             		// ปิดการเชื่อต่อ
+        		curl_close($ch);    	
 							$messages = [
 								'type' => 'text',
-								'text' => $tel
+								'text' => $output
 								];
 					
 
