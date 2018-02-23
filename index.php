@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
 			$ch = curl_init(); 
 
         		// set url สำหรับดึงข้อมูล 
-        		curl_setopt($ch, CURLOPT_URL, "http://93.190.51.85:8080/ChatBOTData/BalanceFromTelno?telno=$_question"); 
+        		curl_setopt($ch, CURLOPT_URL, "http://93.190.51.85:8080/ChatBOTData/BalanceFromTelno?telno=$tel"); 
 
         		//return the transfer as a string 
         		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
