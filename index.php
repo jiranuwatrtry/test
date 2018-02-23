@@ -37,7 +37,7 @@ if (!is_null($events['events'])) {
 				$x_tra = str_replace("โทรศัพท์","", $text);
       				$pieces = explode(" ", $x_tra);
       				$tel = str_replace("","",$pieces[0]);
-      					http://93.190.51.85:8080/ChatBOTData/BalanceFromTelno?telno=
+      					
 			$ch = curl_init(); 
 
         		// set url สำหรับดึงข้อมูล 
