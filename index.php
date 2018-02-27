@@ -36,15 +36,16 @@ if (!is_null($events['events'])) {
 	
 				
 			
-			}else if(strpos($text, 'โทรศัพท์') !== false){
+			}else if(strpos($text, 'ลงทะเบียน') !== false){
 				$x_tra = str_replace("โทรศัพท์","", $text);
       				$pieces = explode(" ", $x_tra);
-      				$tel = str_replace("","",$pieces[0]);
+      				$account_num = str_replace("","",$pieces[0]);
+				$service_no = str_replace("","",$pieces[1]);
       					
 			$ch = curl_init(); 
 
         		// set url สำหรับดึงข้อมูล 
-        		curl_setopt($ch, CURLOPT_URL, "http://93.190.51.85:8080/ChatBOTData/BalanceFromTelno?telno=$tel"); 
+        		curl_setopt($ch, CURLOPT_URL, "http://93.190.51.85:8080/ChatBOTData/LineRegisterWS?line_id=$userId&account_num=$account_num&service_no=$service_no"); 
 
         		//return the transfer as a string 
         		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
