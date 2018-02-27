@@ -126,17 +126,22 @@ if (!is_null($events['events'])) {
 			else{
 			// Build message to reply back
 				
-				$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('https://api.line.me/v2/bot/profile/ Authorization: Bearer '.$access_token);
-			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '{userId}']);
-			$response = $bot->getProfile('<userId>');
-				if ($response->isSucceeded()) {
-    				$profile = $response->getJSONDecodedBody();
+				$url = 'https://api.line.me/v2/bot/profile/';
+			
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
     				
 				
 				
 			$messages = [
 				'type' => 'text',
-				'text' => $profile['userId']." : รับทราบครับ"
+				'text' => $result." : รับทราบครับ"
 				
 			];
 				}
