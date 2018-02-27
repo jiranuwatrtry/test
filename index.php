@@ -3,7 +3,7 @@ $access_token = 'v8+dLBrQQq0eb26mIOI8TSJjhxsJFrAOaDz1MdncVOyRqv7mdtPTI6fxa6YsJbU
 // Get POST body content
 $content = file_get_contents('php://input');
 
-$userId = https://api.line.me/v2/bot/profile/{userId};
+
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
