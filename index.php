@@ -152,9 +152,8 @@ if (!is_null($events['events'])) {
 
 				
 			$messages = [
-				'type' => 'image',
-				 "originalContentUrl": "https://p.ptcdn.info/165/005/000/1614680_0908132842_logotot-pantip_l.jpg",
-				"previewImageUrl": "https://p.ptcdn.info/165/005/000/1614680_0908132842_logotot-pantip_l.jpg"
+				'type' => 'text',
+				'text' => $userId
 			];
 				
 			}
