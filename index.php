@@ -45,7 +45,7 @@ if (!is_null($events['events'])) {
 			$ch = curl_init(); 
 
         		// set url สำหรับดึงข้อมูล 
-        		curl_setopt($ch, CURLOPT_URL, "http://93.190.51.85:8080/ChatBOTData/LineRegisterWS?line_id=002&account_num=000615472926&service_no=038671268"); 
+        		curl_setopt($ch, CURLOPT_URL, "http://93.190.51.85:8080/ChatBOTData/LineRegisterWS?line_id=$userId&account_num=$account_num&service_no=$service_no"); 
 
         		//return the transfer as a string 
         		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
@@ -56,7 +56,7 @@ if (!is_null($events['events'])) {
         		curl_close($ch);    	
 							$messages = [
 								'type' => 'text',
-								'text' => $account_num.$service_no.$userId.$output
+								'text' => $output
 								];
 					
 
