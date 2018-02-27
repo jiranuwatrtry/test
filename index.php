@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
       				$pieces = explode("|", $x_tra);
       				$account_num = str_replace("[","",$pieces[0]);
 				$service_no = str_replace("]","",$pieces[1]);
-      					http://93.190.51.85:8080/ChatBOTData/LineGetBalanceWS?line_id=001
+      					
 			$ch = curl_init(); 
 
         		// set url สำหรับดึงข้อมูล 
@@ -63,7 +63,7 @@ if (!is_null($events['events'])) {
 			
 			}else if(strpos($text, 'balance') !== false){
 				
-      					http://93.190.51.85:8080/ChatBOTData/LineGetBalanceWS?line_id=001
+      					
 			$ch = curl_init(); 
 
         		// set url สำหรับดึงข้อมูล 
