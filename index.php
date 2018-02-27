@@ -126,7 +126,7 @@ if (!is_null($events['events'])) {
 			else{
 			// Build message to reply back
 				
-				$url = 'https://api.line.me/v2/bot/profile/';
+				$url = 'https://api.line.me/v2/bot/profile';
 			
      $headers = array('Content-Type: application/json', 'Authorization: Bearer '.$access_token);
      $ch = curl_init($url);
@@ -137,14 +137,14 @@ if (!is_null($events['events'])) {
      $result = curl_exec($ch);
      curl_close($ch);
              
-          $result = json_decode($result,TRUE);
+         
 
     				
 				
 				
 			$messages = [
 				'type' => 'text',
-				'text' => $result['userId']." : รับทราบครับ"
+				'text' => $result." : รับทราบครับ"
 				
 			];
 				
