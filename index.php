@@ -150,13 +150,24 @@ if (!is_null($events['events'])) {
 			else{
 			// Build message to reply back
          
-
-    				
 				
+    				
+				$ch = curl_init(); 
+
+        // set url สำหรับดึงข้อมูล 
+        	curl_setopt($ch, CURLOPT_URL, "https://static-s.aa-cdn.net/img/ios/912067746/c5fa5404cc4688ac99db821911f0a1fb?v=1"); 
+
+        //return the transfer as a string 
+        	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+
+        // ตัวแปร $output เก็บข้อมูลทั้งหมดที่ดึงมา 
+        	$output = curl_exec($ch); 
+             // ปิดการเชื่อต่อ
+        	curl_close($ch);   
 				
 			$messages = [
-				'type' => 'text',
-				'text' => $userId." : รับทราบครับ"
+				'type' => 'image',
+				 "originalContentUrl": "https://p.ptcdn.info/165/005/000/1614680_0908132842_logotot-pantip_l.jpg"
 				
 			];
 				
