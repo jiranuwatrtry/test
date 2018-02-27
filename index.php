@@ -125,10 +125,10 @@ if (!is_null($events['events'])) {
 			}
 			else{
 			// Build message to reply back
-				$gat = https://api.line.me/v2/bot/profile/{userId};
+				$url = 'https://api.line.me/v2/bot/profile/{userId}';
+				
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 			$ch = curl_init($url);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $get);
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
