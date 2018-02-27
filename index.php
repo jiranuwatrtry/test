@@ -41,11 +41,33 @@ if (!is_null($events['events'])) {
       				$pieces = explode("|", $x_tra);
       				$account_num = str_replace("[","",$pieces[0]);
 				$service_no = str_replace("]","",$pieces[1]);
-      					
+      					http://93.190.51.85:8080/ChatBOTData/LineGetBalanceWS?line_id=001
 			$ch = curl_init(); 
 
         		// set url สำหรับดึงข้อมูล 
         		curl_setopt($ch, CURLOPT_URL, "http://93.190.51.85:8080/ChatBOTData/LineRegisterWS?line_id=$userId&account_num=$account_num&service_no=$service_no"); 
+
+        		//return the transfer as a string 
+        		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+
+        		// ตัวแปร $output เก็บข้อมูลทั้งหมดที่ดึงมา 
+        		$output = curl_exec($ch); 
+             		// ปิดการเชื่อต่อ
+        		curl_close($ch);    	
+							$messages = [
+								'type' => 'text',
+								'text' => $output
+								];
+					
+
+			
+			}else if(strpos($text, 'balance') !== false){
+				
+      					http://93.190.51.85:8080/ChatBOTData/LineGetBalanceWS?line_id=001
+			$ch = curl_init(); 
+
+        		// set url สำหรับดึงข้อมูล 
+        		curl_setopt($ch, CURLOPT_URL, "http://93.190.51.85:8080/ChatBOTData/LineGetBalanceWS?line_id=$userId"); 
 
         		//return the transfer as a string 
         		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
