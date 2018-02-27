@@ -13,6 +13,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
+			$userId = $event['source']['userId'];
 			$text = $event['message']['text'];
 					// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -125,18 +126,6 @@ if (!is_null($events['events'])) {
 			}
 			else{
 			// Build message to reply back
-				
-				$url = 'https://api.line.me/v2/bot/profile';
-			
-     $headers = array('Content-Type: application/json', 'Authorization: Bearer '.$access_token);
-     $ch = curl_init($url);
-     
-     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-     $result = curl_exec($ch);
-     curl_close($ch);
-             
          
 
     				
@@ -144,7 +133,7 @@ if (!is_null($events['events'])) {
 				
 			$messages = [
 				'type' => 'text',
-				'text' => $result." : รับทราบครับ"
+				'text' => $userId." : รับทราบครับ"
 				
 			];
 				
