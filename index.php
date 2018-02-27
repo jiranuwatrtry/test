@@ -126,8 +126,8 @@ if (!is_null($events['events'])) {
 			else{
 			// Build message to reply back
 				
-				$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('Authorization: Bearer '.$access_token);
-			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => 'https://api.line.me/v2/bot/profile/{userId}']);
+				$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('https://api.line.me/v2/bot/profile/ Authorization: Bearer '.$access_token);
+			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '{userId}']);
 			$response = $bot->getProfile('<userId>');
 				if ($response->isSucceeded()) {
     				$profile = $response->getJSONDecodedBody();
