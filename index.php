@@ -128,7 +128,7 @@ if (!is_null($events['events'])) {
 				
 				$url = 'https://api.line.me/v2/bot/profile/';
 			
-     $headers = array('Content-Type: application/json', 'Authorization: Bearer v8+dLBrQQq0eb26mIOI8TSJjhxsJFrAOaDz1MdncVOyRqv7mdtPTI6fxa6YsJbU16n40F+OTHzWarptr9kYgRGPZbxC+RvXYKPyG+uKxfExyvkfzap7Hw90e/E+IOofq0cv2a+ShZSR4DY3d/uJbGgdB04t89/1O/w1cDnyilFU=');
+     $headers = array('Content-Type: application/json', 'Authorization: Bearer '.$access_token);
      $ch = curl_init($url);
      
      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
