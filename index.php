@@ -149,11 +149,11 @@ if (!is_null($events['events'])) {
 			}
 			else{
 			// Build message to reply back
-
+				   
 				
 			$messages = [
 				'type' => 'text',
-				'text' => $userId
+				'text' => "ครับ"
 			];
 				
 			}
