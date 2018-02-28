@@ -53,7 +53,22 @@ if (!is_null($events['events'])) {
         		// ตัวแปร $output เก็บข้อมูลทั้งหมดที่ดึงมา 
         		$output = curl_exec($ch); 
              		// ปิดการเชื่อต่อ
-        		curl_close($ch);    	
+        		curl_close($ch);  
+				$output = str_replace("@@POPUP@@","", $output);
+				$output = str_replace("{"," ", $output);
+    				$output = str_replace(";"," ", $output);
+    				$output = str_replace("}"," ", $output);
+    				$output = str_replace("["," ", $output);
+   	 			$output = str_replace("]"," ", $output);
+    				$output = str_replace("service_no","เลขหมายบริการ ", $output);
+    				$output = str_replace("account_num","รหัสลูกค้า ", $output);
+    				$output = str_replace("response"," ", $output);
+    				$output = str_replace(":"," ", $output);
+    				$output = str_replace(","," ", $output);
+    				$output = str_replace('"',' ', $output);
+
+
+
 							$messages = [
 								'type' => 'text',
 								'text' => $output
