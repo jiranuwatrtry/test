@@ -40,9 +40,9 @@ if (!is_null($events['events'])) {
 			
 			}else if(strpos($text, 'ลงทะเบียน') !== false){
 				$x_tra = str_replace("ลงทะเบียน","", $text);
-      				$pieces = explode(",", $x_tra);
-      				$account_num = str_replace(" ","",$pieces[0]);
-				$service_no = str_replace(" ","",$pieces[1]);
+      				$pieces = explode("|", $x_tra);
+      				$account_num = $pieces[0]
+				$service_no = $pieces[1]
       					
 			$ch = curl_init(); 
 
