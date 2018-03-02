@@ -57,17 +57,17 @@ if (!is_null($events['events'])) {
              		// ปิดการเชื่อต่อ
         		curl_close($ch);  
 				$output = str_replace("@@POPUP@@","", $output);
-				$output = str_replace("{"," ", $output);
+				$output = str_replace("{","", $output);
     				$output = str_replace(";"," ", $output);
-    				$output = str_replace("}"," ", $output);
-    				$output = str_replace("["," ", $output);
-   	 			$output = str_replace("]"," ", $output);
+    				$output = str_replace("}","", $output);
+    				$output = str_replace("[","", $output);
+   	 			$output = str_replace("]","", $output);
     				$output = str_replace("service_no","เลขหมายบริการ ", $output);
     				$output = str_replace("account_num","รหัสลูกค้า ", $output);
     				$output = str_replace("response"," ", $output);
-    				$output = str_replace(":"," ", $output);
-    				$output = str_replace(","," ", $output);
-    				$output = str_replace('"',' ', $output);
+    				$output = str_replace(":","", $output);
+    				$output = str_replace(",","", $output);
+    				$output = str_replace('"','', $output);
 
 
 
@@ -94,16 +94,16 @@ if (!is_null($events['events'])) {
              		// ปิดการเชื่อต่อ
         		curl_close($ch); 
 				$output = str_replace("@@POPUP@@","", $output);
-				$output = str_replace("{"," ", $output);
+				$output = str_replace("{","", $output);
     				$output = str_replace(";"," ", $output);
-    				$output = str_replace("}"," ", $output);
-    				$output = str_replace("["," ", $output);
-    				$output = str_replace("]"," ", $output);
+    				$output = str_replace("}","", $output);
+    				$output = str_replace("[","", $output);
+    				$output = str_replace("]","", $output);
     				$output = str_replace("service_no","เลขหมายบริการ", $output);
-    				$output = str_replace("response"," ", $output);
-    				$output = str_replace(":"," ", $output);
-    				$output = str_replace(","," ", $output);
-    				$output = str_replace('"',' ', $output);
+    				$output = str_replace("response","", $output);
+    				$output = str_replace(":","", $output);
+    				$output = str_replace(",","", $output);
+    				$output = str_replace('"','', $output);
 							$messages = [
 								'type' => 'text',
 								'text' => $output
