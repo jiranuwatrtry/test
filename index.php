@@ -66,7 +66,7 @@ if (!is_null($events['events'])) {
     				$output = str_replace("account_num","รหัสลูกค้า ", $output);
     				$output = str_replace("response"," ", $output);
     				$output = str_replace(":","", $output);
-    				$output = str_replace(",","", $output);
+    				$output = str_replace(",","\n", $output);
     				$output = str_replace('"','', $output);
 
 
@@ -102,7 +102,7 @@ if (!is_null($events['events'])) {
     				$output = str_replace("service_no","เลขหมายบริการ", $output);
     				$output = str_replace("response","", $output);
     				$output = str_replace(":","", $output);
-    				$output = str_replace(",","", $output);
+    				$output = str_replace(",","\n", $output);
     				$output = str_replace('"','', $output);
 							$messages = [
 								'type' => 'text',
