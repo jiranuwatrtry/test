@@ -181,7 +181,9 @@ if (!is_null($events['events'])) {
 				
 			$messages = [
 				
-				
+				 'type' => 'image',
+   				 'originalContentUrl' => 'https://boiling-lake-75961.herokuapp.com/tot.jpg',
+    				'previewImageUrl' => 'https://boiling-lake-75961.herokuapp.com/tot.jpg'
 				
 			];
 				
