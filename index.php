@@ -176,7 +176,7 @@ if (!is_null($events['events'])) {
 				'text' => $output
 				];
 			}
-			else if(strpos($text, 'grouid') !== false){
+			else if(strpos($text, 'groupid') !== false){
 			// Build message to reply back
 				   
 				
