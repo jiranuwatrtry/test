@@ -176,14 +176,26 @@ if (!is_null($events['events'])) {
 				'text' => $output
 				];
 			}
-			else{
+			else if(strpos($text, 'grouid') !== false){
 			// Build message to reply back
 				   
 				
 			$messages = [
 				
 				'type' => 'text',
-				'text' => $userId
+				'text' => $groupId
+				
+				
+			];
+				
+			}else{
+			// Build message to reply back
+				   
+				
+			$messages = [
+				
+				'type' => 'text',
+				'text' => "จ้า"
 				
 				
 			];
