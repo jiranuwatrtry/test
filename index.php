@@ -193,14 +193,14 @@ if (!is_null($events['events'])) {
 			
 
 				$urls = 'https://api.line.me/v2/bot/message/push';
-					$messages = {"to": "C073e080765862ebfb2b61977058ebd9a",
+					$messagess = '{"to": "C073e080765862ebfb2b61977058ebd9a",
    					 "messages":[
              					{
                   					"type":"text",
                   				"text":"ครับ"
              					}
-         					]};
-        				$messagess = json_encode($messages);
+         					]}';
+        				
 						$headerss = array('Content-Type: application/json', 'Authorization: Bearer v8+dLBrQQq0eb26mIOI8TSJjhxsJFrAOaDz1MdncVOyRqv7mdtPTI6fxa6YsJbU16n40F+OTHzWarptr9kYgRGPZbxC+RvXYKPyG+uKxfExyvkfzap7Hw90e/E+IOofq0cv2a+ShZSR4DY3d/uJbGgdB04t89/1O/w1cDnyilFU=');
 						$chs = curl_init($urls);
 						curl_setopt($chs, CURLOPT_CUSTOMREQUEST, "POST");
