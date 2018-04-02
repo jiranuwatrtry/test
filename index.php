@@ -190,24 +190,24 @@ if (!is_null($events['events'])) {
 				
 			}else{
 			// Build message to reply back
-				   
-				$tests = ["to": "C073e080765862ebfb2b61977058ebd9a",
- 				"messages":{
-          				[
+				   $urls = 'https://api.line.me/v2/bot/message/push';
+				$tests = {"to": "C073e080765862ebfb2b61977058ebd9a",
+ 				"messages":[
+					{
                				"type":"text",
               				 "text":"ผมไม่แน่ใจครับพี่พงศ์"
-          				]
-				}];
-				$test = json_encode($tests);
+					}
+					]};
+				
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-			$ch = curl_init('https://api.line.me/v2/bot/message/push');
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $test);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			$result = curl_exec($ch);
-			curl_close($ch);
+			$chs = curl_init($urls);
+			curl_setopt($chs, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($chs, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($chs, CURLOPT_POSTFIELDS, $tests);
+			curl_setopt($chs, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($chs, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($chs);
+			curl_close($chs);
 			echo $result . "\r\n";
 				
 			}
