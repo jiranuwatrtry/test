@@ -191,14 +191,23 @@ if (!is_null($events['events'])) {
 			}else{
 			// Build message to reply back
 				   
-				
-			$messages = [
-				
-				'type' => 'text',
-				'text' => "จ้า"
-				
-				
-			];
+				$test = {"to": "C073e080765862ebfb2b61977058ebd9a",
+ 				"messages":[
+          				{
+               				"type":"text",
+              				 "text":"ผมไม่แน่ใจครับพี่พงศ์"
+          				}
+      					]};
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			$ch = curl_init('https://api.line.me/v2/bot/message/push');
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $test);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
+			echo $result . "\r\n";
 				
 			}
 			// Make a POST Request to Messaging API to reply to sender
