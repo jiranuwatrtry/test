@@ -191,13 +191,14 @@ if (!is_null($events['events'])) {
 			}else{
 			// Build message to reply back
 				   
-				$test = {"to": "C073e080765862ebfb2b61977058ebd9a",
- 				"messages":[
-          				{
+				$tests = ["to": "C073e080765862ebfb2b61977058ebd9a",
+ 				"messages":{
+          				[
                				"type":"text",
               				 "text":"ผมไม่แน่ใจครับพี่พงศ์"
-          				}
-      					]};
+          				]
+				}];
+				$test = json_encode($tests);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 			$ch = curl_init('https://api.line.me/v2/bot/message/push');
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
