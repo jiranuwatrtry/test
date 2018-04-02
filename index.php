@@ -16,6 +16,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$userId = $event['source']['userId'];
+			$groupId = $event['source']['groupId'];
 			$text = $event['message']['text'];
 					// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -180,10 +181,10 @@ if (!is_null($events['events'])) {
 				   
 				
 			$messages = [
-				
-				 'type' => 'image',
-   				 'originalContentUrl' => 'https://boiling-lake-75961.herokuapp.com/tot.jpg',
-    				'previewImageUrl' => 'https://boiling-lake-75961.herokuapp.com/tot.jpg'
+				$messages = [
+				'type' => 'text',
+				'text' => $groupId
+				];
 				
 			];
 				
