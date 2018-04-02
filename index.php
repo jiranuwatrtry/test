@@ -197,7 +197,7 @@ if (!is_null($events['events'])) {
    					 "messages":[
              					{
                   					"type":"text",
-                  				"text":"ผมไม่แน่ใจครับพี่พงศ์"
+                  				"text":$text
              					}
          					]}';
         
@@ -214,7 +214,7 @@ if (!is_null($events['events'])) {
 				$messages = [
 				
 				'type' => 'text',
-				'text' => $results
+				'text' => $text
 				
 				
 			];
