@@ -181,10 +181,10 @@ if (!is_null($events['events'])) {
 				   
 				
 			$messages = [
-				$messages = [
+				
 				'type' => 'text',
 				'text' => $groupId
-				];
+				
 				
 			];
 				
