@@ -193,7 +193,7 @@ if (!is_null($events['events'])) {
 			
 
 				$urls = 'https://api.line.me/v2/bot/message/push';
-					$message = array('to'=> 'C073e080765862ebfb2b61977058ebd9a',
+					$message = array('to'=> $userId,
          					'messages'=>array(array(
              							'type'=>'text',
                    						'text'=> $text
