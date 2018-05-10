@@ -188,27 +188,7 @@ if (!is_null($events['events'])) {
 				
 			];
 				
-			}else if(strpos($text, 'ty') !== false){
-					$urls = 'https://api.line.me/v2/bot/message/push';
-					$message = array('to'=> $userId,
-         					'messages'=>array(array(
-             							 "type": "video",
-             "originalContentUrl": "https://boiling-lake-75961.herokuapp.com/547610941.619674.mp4",
-             "previewImageUrl": "https://boiling-lake-75961.herokuapp.com/tot.jpg"
-         							)
-         						)
-         					);
-         					$messagess = json_encode($message);
-						$headerss = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-						$chs = curl_init($urls);
-						curl_setopt($chs, CURLOPT_CUSTOMREQUEST, "POST");
-						curl_setopt($chs, CURLOPT_RETURNTRANSFER, true);
-						curl_setopt($chs, CURLOPT_POSTFIELDS, $messagess);
-						curl_setopt($chs, CURLOPT_HTTPHEADER, $headerss);
-						curl_setopt($chs, CURLOPT_FOLLOWLOCATION, 1);
-						$results = curl_exec($chs);
-						curl_close($chs);
-		}else{
+			}else{
 			// Build message to reply back
 			
 
