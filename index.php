@@ -188,7 +188,15 @@ if (!is_null($events['events'])) {
 				
 			];
 				
-			}else{
+			}else if(strpos($text, 'ty') !== false){
+				"messages":[
+          
+             "type": "video",
+             "originalContentUrl": "https://boiling-lake-75961.herokuapp.com/547610941.619674.mp4",
+             "previewImageUrl": "https://boiling-lake-75961.herokuapp.com/tot.jpg"
+          
+      ];
+		}else{
 			// Build message to reply back
 			
 
