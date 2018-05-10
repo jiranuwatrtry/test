@@ -189,22 +189,12 @@ if (!is_null($events['events'])) {
 			];
 				
 			}else if(strpos($text, 'ty') !== false){
-				"messages":[
-          
-             "type": "video",
-             "originalContentUrl": "https://boiling-lake-75961.herokuapp.com/547610941.619674.mp4",
-             "previewImageUrl": "https://boiling-lake-75961.herokuapp.com/tot.jpg"
-          
-      ];
-		}else{
-			// Build message to reply back
-			
-
-				$urls = 'https://api.line.me/v2/bot/message/push';
+					$urls = 'https://api.line.me/v2/bot/message/push';
 					$message = array('to'=> $userId,
          					'messages'=>array(array(
-             							'type'=>'text',
-                   						'text'=> $text
+             							 "type": "video",
+             "originalContentUrl": "https://boiling-lake-75961.herokuapp.com/547610941.619674.mp4",
+             "previewImageUrl": "https://boiling-lake-75961.herokuapp.com/tot.jpg"
          							)
          						)
          					);
@@ -218,6 +208,11 @@ if (!is_null($events['events'])) {
 						curl_setopt($chs, CURLOPT_FOLLOWLOCATION, 1);
 						$results = curl_exec($chs);
 						curl_close($chs);
+		}else{
+			// Build message to reply back
+			
+
+			
 						
 				
 			}
