@@ -112,8 +112,7 @@ if (!is_null($events['events'])) {
 					
 
 			
-			}else if(strpos($text, 'พี่กบ') !== false || strpos($text, 'พี่เต้') !== false || strpos($text, 'ด๊าด') !== false || strpos($text, 'ตี้') !== false 
-				 || strpos($text, 'หมู') !== false || strpos($text, 'แกลว') !== false){
+			}else if(strpos($text, 'พี่กบ') !== false || strpos($text, 'พี่เต้') !== false || strpos($text, 'ด๊าด') !== false || strpos($text, 'ตี้') !== false || strpos($text, 'หมู') !== false || strpos($text, 'แกลว') !== false){
 				
       					$a=array("เป็นความจริงเลยเดียว","โกหกทั้งเพ","มันไม่ใช่ความจริง","แล้วไงล่ะ","หรอ");
 					$random_keys=array_rand($a,2);
