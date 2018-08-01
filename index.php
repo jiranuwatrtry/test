@@ -125,7 +125,7 @@ if (!is_null($events['events'])) {
 					
 
 			
-			}else if(strpos($text, 'หวย') !== false ){
+			}else if(strpos($text, 'หวยงวดนี้') !== false ){
 					$h1= rand(0,9);
 					$h2= rand(1,9);
 					$h3= rand(0,9);
