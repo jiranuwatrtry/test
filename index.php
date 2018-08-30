@@ -188,6 +188,18 @@ if (!is_null($events['events'])) {
 				
 			];
 				
+			}else if(strpos($text, 'id') !== false){
+			// Build message to reply back
+				   
+				
+			$messages = [
+				
+				'type' => 'text',
+				'text' => $userId
+				
+				
+			];
+				
 			}else{
 			// Build message to reply back
 			
