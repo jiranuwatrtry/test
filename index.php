@@ -42,8 +42,9 @@ if (!is_null($events['events'])) {
 			}else if(strpos($text, 'ลงทะเบียน') !== false){
 				$x_tra = str_replace("ลงทะเบียน","", $text);
       				$pieces = explode(",", $x_tra);
-      				$account_num = $pieces[0];
-				$service_no = $pieces[1];
+				$service_no = $pieces[0];
+      				$account_num = $pieces[1];
+				
 
 				$lineid ="Ua40f0a45c80487921763376ed0b72cf4";
 	$access_token = 'v8+dLBrQQq0eb26mIOI8TSJjhxsJFrAOaDz1MdncVOyRqv7mdtPTI6fxa6YsJbU16n40F+OTHzWarptr9kYgRGPZbxC+RvXYKPyG+uKxfExyvkfzap7Hw90e/E+IOofq0cv2a+ShZSR4DY3d/uJbGgdB04t89/1O/w1cDnyilFU=';
