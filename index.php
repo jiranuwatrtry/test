@@ -44,38 +44,34 @@ if (!is_null($events['events'])) {
       				$pieces = explode(",", $x_tra);
       				$account_num = $pieces[0];
 				$service_no = $pieces[1];
-      					
-			$ch = curl_init(); 
 
-        		// set url สำหรับดึงข้อมูล 
-        		curl_setopt($ch, CURLOPT_URL, "http://93.190.51.85:8080/ChatBOTData/LineRegisterWS?line_id=$userId&account_num=$account_num&service_no=$service_no"); 
-
-        		//return the transfer as a string 
-        		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-
-        		// ตัวแปร $output เก็บข้อมูลทั้งหมดที่ดึงมา 
-        		$output = curl_exec($ch); 
-             		// ปิดการเชื่อต่อ
-        		curl_close($ch);  
-				$output = str_replace("@@POPUP@@","", $output);
-				$output = str_replace("{","", $output);
-    				$output = str_replace(";","", $output);
-    				$output = str_replace("}","", $output);
-    				$output = str_replace("[","", $output);
-   	 			$output = str_replace("]","", $output);
-    				$output = str_replace("service_no","เลขหมายบริการ ", $output);
-    				$output = str_replace("account_num","รหัสลูกค้า ", $output);
-    				$output = str_replace("response","", $output);
-    				$output = str_replace(":","", $output);
-    				$output = str_replace(",","\n", $output);
-    				$output = str_replace('"','', $output);
+				$lineid ="Ua40f0a45c80487921763376ed0b72cf4";
+	$access_token = 'v8+dLBrQQq0eb26mIOI8TSJjhxsJFrAOaDz1MdncVOyRqv7mdtPTI6fxa6YsJbU16n40F+OTHzWarptr9kYgRGPZbxC+RvXYKPyG+uKxfExyvkfzap7Hw90e/E+IOofq0cv2a+ShZSR4DY3d/uJbGgdB04t89/1O/w1cDnyilFU=';
+	$url = 'https://api.line.me/v2/bot/message/push';
+	$data = array("to"=> "$lineid",
+		"messages"=>array(array(
+				 
+					  "type"=>"text",
+					  "text"=>"เลขหมายบริการ ".$service_no." รหัสบัญชีใบแจ้งหนี้ ".$account_num." id_line ".$userId." ต้องการลงทะเบียน line Bill"
+					  )
+			 ));
+	$post = json_encode($data);
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$ch = curl_init($url);
+				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+				curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+				$result = curl_exec($ch);
+				curl_close($ch);
 
 
 
-							$messages = [
-								'type' => 'text',
-								'text' => $output
-								];
+			$messages = [
+					'type' => 'text',
+					'text' => "ระบบได้ส่งคำขอใช้บริการ  line Bill ของท่านแล้ว เมื่อดำเนินการแล้วเสร็จระบบจะแจ้งเตือให้ท่านทราบครับ"
+				];
 					
 
 			
@@ -112,18 +108,6 @@ if (!is_null($events['events'])) {
 					
 
 			
-			}else if(strpos($text, 'พี่กบ') !== false || strpos($text, 'ด๊าด') !== false || strpos($text, 'พี่เต้') !== false || strpos($text, 'พี่หมู') !== false || strpos($text, 'พี่แกลว') !== false || strpos($text, 'ตี้') !== false || strpos($text, 'พี่หนิง') !== false){
-				
-      					$a=array("เป็นความจริงเลยเดียว","โกหกทั้งเพ","มันไม่ใช่ความจริง","แล้วไงล่ะ","หรอ","กะส่างติล่ะ","ผมไม่เชื่อคุณ","จั่งใด๋หรือจั่งใด๋","มันเป็นจั่งใด๋เดี๋ยวนิฮึ!!");
-					$random_keys=array_rand($a,2);
-					 
-								
-							$messages = [
-								'type' => 'text',
-								'text' => $text." : ".$a[$random_keys[0]]
-								];
-					
-
 			
 			}else if(strpos($text, 'หวยงวดนี้') !== false ){
 					$h1= rand(0,9);
