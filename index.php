@@ -41,9 +41,9 @@ if (!is_null($events['events'])) {
 			
 			}else if(strpos($text, 'ลงทะเบียน') !== false){
 				$x_tra = str_replace("ลงทะเบียน","", $text);
-      				$pieces = explode(",", $x_tra);
-				$service_no = $pieces[0];
-      				$account_num = $pieces[1];
+      				
+				$service_no = $x_tra;
+      				
 				
 
 				$lineid ="Ua40f0a45c80487921763376ed0b72cf4";
@@ -53,7 +53,7 @@ if (!is_null($events['events'])) {
 		"messages"=>array(array(
 				 
 					  "type"=>"text",
-					  "text"=>"เลขหมายบริการ ".$service_no." รหัสบัญชีใบแจ้งหนี้ ".$account_num." id_line ".$userId." ต้องการลงทะเบียน line Bill"
+					  "text"=>"เลขหมายบริการ ".$service_no." id_line ".$userId." ต้องการลงทะเบียน line Bill"
 					  )
 			 ));
 	$post = json_encode($data);
